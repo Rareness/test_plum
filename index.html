@@ -86,8 +86,8 @@
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-icon">🖼️</div>
-        <h3>Проверьте превью</h3>
-        <p>Сразу увидите, как будет выглядеть обложка книги.</p>
+        <h3>Пролистайте книгу</h3>
+        <p>Загрузите фото ребёнка и сразу увидите готовую книгу — обложку и страницы с иллюстрациями.</p>
       </div>
       <div class="step">
         <div class="step-num">4</div>
@@ -181,21 +181,26 @@
   </div>
 </footer>
 
-<!-- ===== PERSONALIZE MODAL ===== -->
-<div class="overlay" id="personalizeOverlay">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="personalizeTitle">
-    <button class="modal-close" data-close-personalize aria-label="Закрыть">✕</button>
-    <div class="modal-grid">
-      <div class="modal-preview">
-        <div class="preview-cover" id="previewCover">
-          <span class="preview-emoji" id="previewEmoji">📖</span>
-          <p class="preview-title" id="previewTitle">Название книги</p>
+<!-- ===== CONSTRUCTOR ===== -->
+<div class="overlay" id="constructorOverlay">
+  <div class="constructor" role="dialog" aria-modal="true" aria-labelledby="constructorTitle">
+    <button class="modal-close" data-close-constructor aria-label="Закрыть">✕</button>
+    <div class="constructor-grid">
+
+      <div class="constructor-form">
+        <span class="badge">🛠️ Конструктор книги</span>
+        <h3 id="constructorTitle">Соберите книгу</h3>
+        <p class="modal-book-desc" id="constructorBookDesc"></p>
+
+        <div class="photo-upload" id="photoDropzone">
+          <div class="photo-preview-wrap" id="photoPreviewWrap">📷</div>
+          <div class="photo-upload-actions">
+            <label class="btn btn-ghost btn-sm" for="photoInput">📷 Загрузить фото</label>
+            <input type="file" id="photoInput" accept="image/*" hidden>
+            <button class="btn-text" id="removePhotoBtn" hidden type="button">Удалить фото</button>
+          </div>
+          <p class="photo-hint">Фото появится на обложке и страницах книги. Хранится только в вашем браузере и никуда не отправляется.</p>
         </div>
-        <p class="preview-dedication" id="previewDedication"></p>
-      </div>
-      <div class="modal-form">
-        <h3 id="personalizeTitle">Персонализация книги</h3>
-        <p class="modal-book-desc" id="modalBookDesc"></p>
 
         <label class="field">
           <span>Имя ребёнка *</span>
@@ -234,6 +239,16 @@
         </div>
         <p class="field-error" id="fieldError">Пожалуйста, впишите имя ребёнка</p>
       </div>
+
+      <div class="constructor-preview">
+        <div class="book-flip" id="bookFlip">
+          <button class="flip-nav flip-prev" id="flipPrev" aria-label="Предыдущая страница" type="button">‹</button>
+          <div class="book-page" id="bookPage"></div>
+          <button class="flip-nav flip-next" id="flipNext" aria-label="Следующая страница" type="button">›</button>
+        </div>
+        <div class="flip-dots" id="flipDots"></div>
+      </div>
+
     </div>
   </div>
 </div>
