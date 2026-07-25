@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СказкаТут — персонализированные книги для детей</title>
+<meta name="description" content="Создайте уникальную детскую книгу, где главный герой — ваш ребёнок. Имя, возраст и посвящение на каждой странице.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo">📖 <span>Сказка</span>Тут</a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#catalog">Каталог</a>
+      <a href="#how">Как это работает</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burgerBtn" aria-label="Меню">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="badge">✨ Именная книга за 3 минуты</span>
+      <h1>Книга, где герой —<br><span class="accent">ваш ребёнок</span></h1>
+      <p>Впишите имя, выберите историю и получите уникальную книгу с персонажем, похожим на вашего малыша. Отличный подарок на день рождения, Новый год или просто «просто так».</p>
+      <div class="hero-cta">
+        <a href="#catalog" class="btn btn-primary">Выбрать книгу</a>
+        <a href="#how" class="btn btn-ghost">Как это работает</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>12 000+</strong><span>довольных семей</span></div>
+        <div><strong>4.9★</strong><span>средняя оценка</span></div>
+        <div><strong>2–4 дня</strong><span>на доставку</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="floaty book-mock">
+        <div class="book-mock-cover">
+          <span class="book-mock-emoji">🦉</span>
+          <p class="book-mock-title">Приключение<br><b>Миланы</b><br>в волшебном лесу</p>
+        </div>
+      </div>
+      <span class="deco deco-star">⭐</span>
+      <span class="deco deco-cloud">☁️</span>
+      <span class="deco deco-heart">💛</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how" id="how">
+  <div class="container">
+    <h2 class="section-title">Как это работает</h2>
+    <p class="section-sub">Четыре простых шага — и уникальная книга уже едет к вам</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-icon">📚</div>
+        <h3>Выберите историю</h3>
+        <p>Космос, океан, лес или королевство — на любой вкус и возраст.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-icon">✏️</div>
+        <h3>Персонализируйте</h3>
+        <p>Впишите имя, возраст, пол и тёплое посвящение на форзаце.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-icon">🖼️</div>
+        <h3>Проверьте превью</h3>
+        <p>Сразу увидите, как будет выглядеть обложка книги.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-icon">🚚</div>
+        <h3>Получите книгу</h3>
+        <p>Печатаем и доставляем за 2–4 дня в красивой подарочной упаковке.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATALOG ===== -->
+<section class="catalog" id="catalog">
+  <div class="container">
+    <h2 class="section-title">Каталог книг</h2>
+    <p class="section-sub">Выберите историю — имя героя впишем на следующем шаге</p>
+    <div class="book-grid" id="bookGrid"><!-- рендерится в JS --></div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <h2 class="section-title">Отзывы родителей</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-head"><span class="avatar">👩</span><div><b>Ирина, Москва</b><div class="stars">★★★★★</div></div></div>
+        <p>Сын был в восторге — просил перечитывать книгу про себя каждый вечер! Качество печати отличное.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head"><span class="avatar">👨</span><div><b>Алексей, Казань</b><div class="stars">★★★★★</div></div></div>
+        <p>Заказывал в подарок племяннице на день рождения. Пришло быстро, упаковка очень праздничная.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head"><span class="avatar">👩‍🦱</span><div><b>Светлана, СПб</b><div class="stars">★★★★★</div></div></div>
+        <p>Превью обложки перед заказом — очень удобно, сразу видно результат. Закажу ещё для второго ребёнка.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq-list" id="faqList"><!-- рендерится в JS --></div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Подарите книгу, которую запомнят навсегда</h2>
+      <p>Персонализация занимает всего пару минут</p>
+    </div>
+    <a href="#catalog" class="btn btn-light">Создать книгу</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" id="contacts">
+  <div class="container footer-grid">
+    <div>
+      <a href="#top" class="logo light">📖 <span>Сказка</span>Тут</a>
+      <p>Персонализированные детские книги ручной сборки — с 2021 года.</p>
+    </div>
+    <div>
+      <h4>Покупателям</h4>
+      <a href="#catalog">Каталог</a>
+      <a href="#how">Как это работает</a>
+      <a href="#faq">Доставка и оплата</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="mailto:hello@skazkatut.ru">hello@skazkatut.ru</a>
+      <a href="tel:+78003501234">8 (800) 350-12-34</a>
+      <p>Ежедневно, 9:00–21:00 (МСК)</p>
+    </div>
+    <div>
+      <h4>Мы в соцсетях</h4>
+      <div class="social-row">
+        <a href="#" aria-label="VK">VK</a>
+        <a href="#" aria-label="Telegram">TG</a>
+        <a href="#" aria-label="Instagram">IG</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 СказкаТут. Все права защищены.</p>
+  </div>
+</footer>
+
+<!-- ===== PERSONALIZE MODAL ===== -->
+<div class="overlay" id="personalizeOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="personalizeTitle">
+    <button class="modal-close" data-close-personalize aria-label="Закрыть">✕</button>
+    <div class="modal-grid">
+      <div class="modal-preview">
+        <div class="preview-cover" id="previewCover">
+          <span class="preview-emoji" id="previewEmoji">📖</span>
+          <p class="preview-title" id="previewTitle">Название книги</p>
+        </div>
+        <p class="preview-dedication" id="previewDedication"></p>
+      </div>
+      <div class="modal-form">
+        <h3 id="personalizeTitle">Персонализация книги</h3>
+        <p class="modal-book-desc" id="modalBookDesc"></p>
+
+        <label class="field">
+          <span>Имя ребёнка *</span>
+          <input type="text" id="fieldName" placeholder="Например, Мила" maxlength="20" required>
+        </label>
+
+        <fieldset class="field">
+          <span>Пол героя</span>
+          <div class="radio-row">
+            <label><input type="radio" name="gender" value="Мальчик" checked> Мальчик</label>
+            <label><input type="radio" name="gender" value="Девочка"> Девочка</label>
+            <label><input type="radio" name="gender" value="Сюрприз"> Пусть будет сюрприз</label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span>Возраст</span>
+          <select id="fieldAge">
+            <option>0–1 год</option>
+            <option>1–2 года</option>
+            <option selected>3–4 года</option>
+            <option>5–6 лет</option>
+            <option>7–8 лет</option>
+            <option>9+ лет</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Посвящение (необязательно)</span>
+          <textarea id="fieldDedication" rows="2" maxlength="120" placeholder="Например: Любимой дочке от мамы и папы"></textarea>
+        </label>
+
+        <div class="modal-price-row">
+          <span class="modal-price" id="modalPrice">0 ₽</span>
+          <button class="btn btn-primary" id="addToCartBtn">Добавить в корзину</button>
+        </div>
+        <p class="field-error" id="fieldError">Пожалуйста, впишите имя ребёнка</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="overlay" id="cartOverlay">
+  <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Корзина">
+    <div class="cart-drawer-head">
+      <h3>Ваша корзина</h3>
+      <button class="modal-close" data-close-cart aria-label="Закрыть">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"><!-- рендерится в JS --></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Итого</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Оформить заказ</button>
+    </div>
+  </aside>
+</div>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="overlay" id="checkoutOverlay">
+  <div class="modal modal-narrow" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="modal-close" data-close-checkout aria-label="Закрыть">✕</button>
+    <div id="checkoutFormWrap">
+      <h3 id="checkoutTitle">Оформление заказа</h3>
+      <label class="field"><span>Ваше имя *</span><input type="text" id="checkoutName" required></label>
+      <label class="field"><span>Телефон *</span><input type="tel" id="checkoutPhone" placeholder="+7 (___) ___-__-__" required></label>
+      <label class="field"><span>Email</span><input type="email" id="checkoutEmail" placeholder="you@example.com"></label>
+      <label class="field"><span>Адрес доставки *</span><input type="text" id="checkoutAddress" placeholder="Город, улица, дом, квартира" required></label>
+      <fieldset class="field">
+        <span>Способ оплаты</span>
+        <div class="radio-row">
+          <label><input type="radio" name="payment" value="Онлайн" checked> Картой онлайн</label>
+          <label><input type="radio" name="payment" value="При получении"> При получении</label>
+        </div>
+      </fieldset>
+      <div class="cart-total-row">
+        <span>К оплате</span>
+        <strong id="checkoutTotal">0 ₽</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="submitOrderBtn">Подтвердить заказ</button>
+      <p class="field-error" id="checkoutError">Заполните обязательные поля (*)</p>
+    </div>
+    <div id="checkoutSuccess" class="checkout-success">
+      <div class="success-icon">🎉</div>
+      <h3>Спасибо за заказ!</h3>
+      <p>Номер заказа <strong id="orderNumber">#0000</strong>. Мы свяжемся с вами в ближайшее время для подтверждения.</p>
+      <button class="btn btn-primary" data-close-checkout>Отлично!</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
