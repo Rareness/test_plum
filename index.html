@@ -54,8 +54,8 @@
     <div class="hero-art" aria-hidden="true">
       <div class="floaty book-mock">
         <div class="book-mock-cover">
-          <span class="book-mock-emoji">🦉</span>
-          <p class="book-mock-title">Приключение<br><b>Миланы</b><br>в волшебном лесу</p>
+          <span class="book-mock-emoji">🪁</span>
+          <p class="book-mock-title">Персональная книга<br>для <b>Миланы</b></p>
         </div>
       </div>
       <span class="deco deco-star">⭐</span>
@@ -75,7 +75,7 @@
         <div class="step-num">1</div>
         <div class="step-icon">📚</div>
         <h3>Выберите историю</h3>
-        <p>Космос, океан, лес или королевство — на любой вкус и возраст.</p>
+        <p>17 сюжетов на три возраста — от первой книжки-картонки до приключений для школьников.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
@@ -103,7 +103,8 @@
 <section class="catalog" id="catalog">
   <div class="container">
     <h2 class="section-title">Каталог книг</h2>
-    <p class="section-sub">Выберите историю — имя героя впишем на следующем шаге</p>
+    <p class="section-sub">17 историй на три возраста — выберите книгу, имя героя впишем на следующем шаге</p>
+    <div class="tier-filters" id="tierFilters"><!-- рендерится в JS --></div>
     <div class="book-grid" id="bookGrid"><!-- рендерится в JS --></div>
   </div>
 </section>
@@ -214,18 +215,12 @@
             <label><input type="radio" name="gender" value="Девочка"> Девочка</label>
             <label><input type="radio" name="gender" value="Сюрприз"> Пусть будет сюрприз</label>
           </div>
+          <p class="field-hint">Для варианта «сюрприз» текст напишем в мужском роде.</p>
         </fieldset>
 
         <label class="field">
-          <span>Возраст</span>
-          <select id="fieldAge">
-            <option>0–1 год</option>
-            <option>1–2 года</option>
-            <option selected>3–4 года</option>
-            <option>5–6 лет</option>
-            <option>7–8 лет</option>
-            <option>9+ лет</option>
-          </select>
+          <span>Возраст ребёнка</span>
+          <input type="number" id="fieldAge" min="0" max="12" value="4">
         </label>
 
         <label class="field">

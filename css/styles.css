@@ -208,6 +208,30 @@ img { max-width: 100%; display: block; }
 
 /* ===== Catalog ===== */
 .catalog { padding: 40px 0 90px; }
+.tier-filters { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+.tier-filter-btn {
+  border: 2px solid #E9E4D8;
+  background: #fff;
+  color: var(--navy);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: .92rem;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.tier-filter-btn:hover { border-color: var(--teal); }
+.tier-filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.seasonal-pill {
+  background: #E4F6F4;
+  color: #1a6b63;
+  font-size: .74rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-left: 6px;
+}
 .book-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -238,7 +262,8 @@ img { max-width: 100%; display: block; }
 .book-info { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
 .book-info h3 { font-size: 1.15rem; }
 .book-info p.desc { color: var(--muted); font-size: .9rem; flex: 1; }
-.book-meta { display: flex; justify-content: space-between; align-items: center; margin: 10px 0 16px; }
+.book-meta { display: flex; justify-content: space-between; align-items: center; margin: 10px 0 16px; flex-wrap: wrap; gap: 6px; }
+.book-meta .badges { display: flex; align-items: center; flex-wrap: wrap; }
 .age-pill {
   background: #FFF3CF;
   color: #8a6d00;
@@ -381,6 +406,7 @@ img { max-width: 100%; display: block; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--teal); }
 .radio-row { display: flex; gap: 16px; flex-wrap: wrap; font-size: .9rem; font-weight: 600; }
 .radio-row label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.field-hint { font-size: .78rem; color: var(--muted); margin: 6px 0 0; }
 
 .modal-price-row { display: flex; align-items: center; justify-content: space-between; margin-top: 26px; gap: 16px; }
 .modal-price { font-family: 'Baloo 2', sans-serif; font-size: 1.4rem; font-weight: 700; }
